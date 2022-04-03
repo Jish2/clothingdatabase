@@ -12,6 +12,10 @@ app.use(express.json());
 // I dont think this is necessary
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 
+app.get("/", (req, res) => {
+	res.status(200).send("Hello, World!");
+});
+
 app.get("/route", (req, res) => {
 	res.status(200).send({
 		shirt: "cute",
