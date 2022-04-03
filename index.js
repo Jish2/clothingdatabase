@@ -1,18 +1,23 @@
 const express = require("express");
 const app = express();
 
+const port = 3000;
+
 // refactored declaration
 // const app = require("express")();
 
 // middleware for parsing json (for requests)
 app.use(express.json());
 
-// I dont think this is necessary
+app.listen(process.env.PORT || port, () =>
+	console.log(`Express app listening at http://localhost:${port}`)
+);
+
 // app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 
-app.listen(process.env.PORT || 3000, function () {
-	console.log("Express server listening");
-});
+// app.listen(process.env.PORT || 3000, function () {
+// 	console.log("Express server listening");
+// });
 
 // var server_port = process.env.PORT || 80;
 // var server_host = process.env.HOST || '0.0.0.0';
