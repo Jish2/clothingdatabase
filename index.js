@@ -1,10 +1,10 @@
+// refactored declaration
+// const app = require("express")();
+
 const express = require("express");
 const app = express();
 
 const port = 3000;
-
-// refactored declaration
-// const app = require("express")();
 
 // middleware for parsing json (for requests)
 app.use(express.json());
@@ -13,20 +13,12 @@ app.listen(process.env.PORT || port, () =>
 	console.log(`Express app listening at http://localhost:${port}`)
 );
 
-// app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
-
-// app.listen(process.env.PORT || 3000, function () {
-// 	console.log("Express server listening");
-// });
-
-// var server_port = process.env.PORT || 80;
-// var server_host = process.env.HOST || '0.0.0.0';
-// app.listen(server_port, server_host, function() {
-//     console.log('Listening on port %d', server_port);
-// });
-
 app.get("/", (req, res) => {
 	res.status(200).send("Hello, World!");
+});
+
+app.get("/test", (req, res) => {
+	res.status(200).send("Hi mom!");
 });
 
 app.get("/route", (req, res) => {
