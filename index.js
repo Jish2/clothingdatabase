@@ -10,7 +10,9 @@ const PORT = 8080;
 app.use(express.json());
 
 // I dont think this is necessary
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(process.env.PORT || 3000, function () {
+	console.log("Listening");
+});
 
 app.get("/route", (req, res) => {
 	res.status(200).send({
@@ -40,4 +42,8 @@ app.get("/shah", (req, res) => {
 		a: "hoe",
 		bitch: "ass",
 	});
+});
+
+app.get("/test", (req, res) => {
+	res.status(200).send("Hi mom!");
 });
