@@ -28,6 +28,16 @@ app.get("/route", (req, res) => {
 	});
 });
 
+app.get("/shah", (req, res) => {
+	res.status(200).send({
+		ur: "cute",
+		wife: "hot",
+		is: "gay",
+		a: "hoe",
+		bitch: "ass",
+	});
+});
+
 app.post("/route/:id", (req, res) => {
 	const { id } = req.params;
 	const { logo } = req.body;
